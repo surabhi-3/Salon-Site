@@ -1,13 +1,429 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #111;
+  color: #eee;
+  line-height: 1.6;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+p {
+  color: #ddd;
+}
+
+/* ================= Headings ================= */
+h1,
+h2 {
+  color: #fff;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+/* ================= Navbar ================= */
+header {
+  background: #000;
+  border-bottom: 1px solid #222;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f5c542;
+  text-decoration: none;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #ccc;
+  font-weight: 500;
+  margin-left: 20px;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #f5c542;
+}
+
+/* ================= Buttons ================= */
+.btn-primary {
+  background: #f5c542;
+  color: #000;
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #d4a322;
+}
+
+.btn-hero {
+  background-color: #ff3d3d;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-hero:hover {
+  background-color: #cc2a2a;
+}
+
+/* ================= Cards ================= */
+.card {
+  background: #1a1a1a;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.card h3 {
+  color: #f5c542;
+  margin-bottom: 15px;
+}
+
+/* ================= Services Grid ================= */
+.services-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* ================= Dark Theme for Services ================= */
+.services-dark-theme {
+  background-color: #111;
+  color: #f0f0f0;
+}
+
+.services-dark-theme h1,
+.services-dark-theme h2,
+.services-dark-theme h3 {
+  color: #fff;
+}
+
+.services-dark-theme .form-control {
+  background-color: #222;
+  border: 1px solid #555;
+  color: #f0f0f0;
+}
+
+.services-dark-theme .form-control::placeholder {
+  color: #fff;
+}
+
+.services-dark-theme .card {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  margin-bottom: 2rem;
+}
+
+.services-dark-theme .card:hover {
+  background-color: #222;
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+
+.services-dark-theme .service-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #333;
+  font-size: 1rem;
+  color: white;
+}
+
+.services-dark-theme .service-item:last-child {
+  border-bottom: none;
+}
+
+.services-dark-theme .price {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+/* Scrollbar */
+.services-dark-theme ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.services-dark-theme ::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 4px;
+}
+
+
+
+/* ================= About Section ================= */
+.about-section {
+  background-color: #111;
+  color: #eee;
+  padding: 40px 20px;
+  font-family: sans-serif;
+  border-top: 1px solid #333;
+}
+
+.about-heading {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  color: #f5c542;
+}
+
+.about-description {
+  text-align: center;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  color: #ccc;
+  white-space: pre-line;
+}
+
+.about-divider {
+  border-top: 1px solid #555;
+  margin: 30px auto;
+  width: 80%;
+}
+
+.about-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+  padding: 10px 0;
+}
+
+.about-column {
+  flex: 1 1 250px;
+  min-width: 200px;
+}
+
+.about-column h4 {
+  color: #f0f0f0;
+  margin-bottom: 10px;
+}
+
+.about-column p,
+.about-column a {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin: 4px 0;
+  text-decoration: none;
+}
+
+.about-column a:hover {
+  color: #ff9999;
+}
+
+/* ================= Footer ================= */
+.footer-section {
+  background-color: #111;
+  color: #fff;
+}
+
+.footer-section a {
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+  color: #f0a500;
+}
+
+.text-center.small {
+  margin-top: 30px;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+
+/* ================= Image Slider ================= */
+.image-slider {
+  position: relative;
+  width: 100%;
+  /* Make the slider take full width of the container */
+  max-width: 1200px;
+  /* Increase max-width to make it wider */
+  height: 50vh;
+  /* Increase height of the slider */
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slider-img {
+  width: 100%;
+  height: 100%;
+  /* Ensure image fills the entire height */
+  object-fit: cover;
+  /* Maintain aspect ratio and cover the area */
+  transition: opacity 0.8s ease-in-out;
+  display: block;
+  border-radius: 10px;
+}
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}
+
+.slider-controls button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #ff3d3d;
+}
+
+/* ================= Hero Banner ================= */
+/* ================= Hero Section ================= */
+.hero-banner {
+  position: relative;
+  height: 80vh;
+  /* Adjust height of the hero section */
+  display: flex;
+  justify-content: center;
+  /* Center content horizontally */
+  align-items: center;
+  /* Center content vertically */
+  background-color: black;
+  /* Black background for the hero section */
+  color: white;
+  overflow: hidden;
+  /* Hide anything that overflows */
+}
+
+.hero-banner .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Dark overlay */
+  z-index: 1;
+  /* Overlay stays below text content */
+}
+
+/* ================= Hero Text Styling ================= */
+.hero-banner .text-content {
+  position: absolute;
+  /* Absolute positioning to place it above the image */
+  top: 20%;
+  /* Adjust this to position it a bit higher */
+  left: 50%;
+  transform: translateX(-50%);
+  /* Center the text horizontally */
+  z-index: 2;
+  /* Ensure the text is above the image */
+  text-align: center;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-banner .text-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.hero-banner .text-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.hero-banner .text-content .btn-hero {
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #ff5e5e;
+  /* A warm, elegant red */
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-banner .text-content .btn-hero:hover {
+  background-color: #e14e4e;
+}
+
+/* ================= Image Slider ================= */
+.image-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* Make the image slider fill the entire hero section */
+  max-height: 600px;
+  /* Optional: Adjust height if needed */
+  margin-bottom: 20px;
+  /* Add some space below the slider */
+  z-index: 0;
+  /* Ensure image slider stays below text content */
+}
+
+.slider-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensure the image covers the entire space */
+  border-radius: 10px;
 }
